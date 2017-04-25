@@ -1,6 +1,7 @@
 <template>
 <div>
-  <mt-tabbar v-model="selected">
+  <router-view></router-view>
+  <mt-tabbar v-model="selected" @input="selectTab">
     <mt-tab-item v-for="item in navList" :key="item.id" :id="item.id">
       <img slot="icon" :src="tabImg(item)">
       {{item.title}}
@@ -57,6 +58,9 @@ export default {
       } else {
         return item.imgNormal
       }
+    },
+    selectTab (val) {
+      this.$router.push(val)
     }
   }
 }
