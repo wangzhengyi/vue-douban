@@ -3,6 +3,16 @@
 > 小组作业，高仿豆瓣APP.参考链接:[vue.js2.0实战：仿豆瓣app项目](https://zhuanlan.zhihu.com/p/26522523)
 
 ------
+## 项目分工
+
+- [x] 项目架构 - 王正一 (已经完成Index.vue，并通过路由跳转)
+- [ ] 首页 Home.vue
+- [ ] 书影音 Media.vue
+- [ ] 小组 Group.vue
+- [ ] 广播 Status.vue
+- [ ] 我的 Profile.vue
+
+------
 ## 项目依赖
 
 1. [Mint UI](http://mint-ui.github.io/#!/zh-cn)
