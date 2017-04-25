@@ -8,15 +8,17 @@ import 'muse-ui/dist/muse-ui.css'
 import 'muse-ui/dist/theme-teal.css'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import VueResource from 'vue-resource'
 
 Vue.use(MuseUI)
 Vue.use(MintUI)
+Vue.use(VueResource)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: { App }
+    el: '#app',
+    router,
+    template: '<App/>',
+    components: { App }
 })

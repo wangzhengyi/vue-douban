@@ -1,22 +1,43 @@
 <template>
-  <div>
+  <div class="home">
     <header class="m-header is-bg is-fixed" >
           <div class="m-header-button is-left">
-              <a href="javascript:;">
-                <!--<img class="m-icon-img" src="../../assets/images/ic_bar_back_white.png"/>-->
-              返回</a>
+              <!--<a href="javascript:;">
+                <img class="m-icon-img" src="../../assets/images/ic_bar_back_white.png"/>
+              返回</a>-->
           </div>
           <h1 class="m-header-title">豆瓣app</h1>
           <div class="m-header-button is-right">
               <a href="javascript:;">分享</a>
           </div>
       </header>
+      <div class="content">
+          <ul>
+            <li class="item" v-for="item in list">
+              <span>{{item.title}}</span>
+            </li>
+          </ul>
+      </div>
   </div>
 </template>
 
 <script>
     export default {
-        name: 'Home'
+        name: 'Home',
+        data: function() {
+            return {
+                list: []
+            }
+        },
+        mounted() {
+            this.$http.get('api/homeData').then(response => {
+                console.log('get homeData', response);
+                this.list = response.body.data.recommend_feeds;
+            }, response => {
+                // error callback
+                console.log('err: ', response);
+            });
+        }
     }
 </script>
 
@@ -74,5 +95,9 @@
             top: 0;
             z-index: 9;
         }
+    }
+    
+    ul li {
+        list-style-type: none;
     }
 </style>
